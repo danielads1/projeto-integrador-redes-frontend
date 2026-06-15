@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VidaSaudável — Sua Saúde em Foco</title>
+  
+  <!-- Fontes Premium e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vida<strong>Saudável</strong></span>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#calculadora">Calculadora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Projeto Integrador 2026</p>
+        <h1>Cuide da sua saúde<br><span>com informação</span></h1>
+        <p class="hero-sub">Bem-vindo ao VidaSaudável — seu espaço de dicas práticas, ferramentas e informações sobre bem-estar e qualidade de vida.</p>
+        <div class="hero-btns">
+          <a href="#calculadora" class="btn btn-primary">Calcular meu IMC</a>
+          <a href="#dicas" class="btn btn-outline">Ver Dicas</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Funcionalidades JS</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Seções de conteúdo</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Responsivo</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon" style="color: var(--verde-claro);">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <p class="hero-card-title">Saúde Cardiovascular</p>
+          <p class="hero-card-sub">30 min de exercício por dia reduzem em 35% o risco de doenças cardíacas</p>
+        </div>
+        <div class="hero-card hero-card-alt">
+          <div class="hero-card-icon">🥗</div>
+          <p class="hero-card-title">Alimentação Saudável</p>
+          <p class="hero-card-sub">5 porções de frutas e vegetais diárias fortalecem o sistema imunológico</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">😴</div>
+          <p class="hero-card-title">Qualidade do Sono</p>
+          <p class="hero-card-sub">7 a 9 horas de sono por noite melhoram memória e humor</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE COM A IMAGEM APONTANDO PARA A PASTA "IMAGENS" PRO GITHUB -->
+    <article id="sobre" class="sobre">
+      <div class="sobre-inner" style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+        
+        <div style="flex: 1 1 400px;">
+          <div class="sobre-badge">Sobre o Projeto</div>
+          <h2>O que é o VidaSaudável?</h2>
+          <p>Este site foi criado como parte do <strong>Projeto Integrador</strong> da disciplina de <em>Redes de Computadores</em>. O objetivo é demonstrar a integração entre o desenvolvimento de uma página web funcional e sua hospedagem em um servidor configurado no Cisco Packet Tracer.</p>
+          <p>O tema escolhido é saúde e bem-estar — um assunto relevante para o cotidiano de todos, que permite explorar diferentes elementos web como tabelas, formulários, listas, interatividade com JavaScript e design responsivo.</p>
+          <div class="sobre-tags">
+            <span class="tag">HTML5 Semântico</span>
+            <span class="tag">CSS3 Externo</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Cisco Packet Tracer</span>
+            <span class="tag">DNS + HTTP</span>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 300px;">
+          <!-- AQUI ESTÁ A MUDANÇA: src="imagens/banner.jpg" -->
+          <img src="imagens/banner.jpg" alt="Prato com alimentação saudável" style="width: 100%; border-radius: var(--radius); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4); object-fit: cover; aspect-ratio: 4/3; border: 2px solid rgba(255,255,255,0.1);">
+        </div>
+
+      </div>
+    </article>
+
+    <section id="dicas" class="dicas">
+      <div class="section-header">
+        <span class="section-eyebrow">Bem-estar</span>
+        <h2>Dicas para uma Vida Saudável</h2>
+        <p>Pequenos hábitos diários fazem uma grande diferença no longo prazo.</p>
+      </div>
+
+      <aside class="dica-destaque">
+        <div class="dica-header">
+          <span class="dica-badge"><i class="fa-solid fa-lightbulb"></i> Dica do Dia</span>
+          <button id="btn-dica" onclick="mostrarDica()">Nova Dica <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <p id="dica-texto">Clique em "Nova Dica" para receber uma dica de saúde personalizada!</p>
+      </aside>
+
+      <div class="cards-grid">
+        <div class="card" onclick="expandirCard(this)">
+          <div class="card-icon">🥗</div>
+          <h3>Alimentação</h3>
+          <p>Uma dieta equilibrada é a base da saúde. Inclua variedade de nutrientes em cada refeição.</p>
+          <ul>
+            <li>5 porções de frutas e vegetais por dia</li>
+            <li>Reduza açúcar e ultraprocessados</li>
+            <li>Beba 2 litros de água diariamente</li>
+            <li>Prefira grãos integrais</li>
+          </ul>
+          <span class="card-more">Clique para expandir <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="card" onclick="expandirCard(this)">
+          <div class="card-icon">🏃</div>
+          <h3>Exercício Físico</h3>
+          <p>A atividade física regular traz benefícios imediatos para corpo e mente.</p>
+          <ul>
+            <li>150 min de atividade moderada por semana</li>
+            <li>Exercícios de força 2x por semana</li>
+            <li>Caminhadas diárias já fazem diferença</li>
+            <li>Alongue antes e depois</li>
+          </ul>
+          <span class="card-more">Clique para expandir <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="card" onclick="expandirCard(this)">
+          <div class="card-icon">😴</div>
+          <h3>Sono e Descanso</h3>
+          <p>Dormir bem é tão essencial quanto alimentação e exercício.</p>
+          <ul>
+            <li>7 a 9 horas de sono por noite</li>
+            <li>Mantenha horários regulares</li>
+            <li>Evite telas 30 min antes de dormir</li>
+            <li>Ambiente escuro e silencioso</li>
+          </ul>
+          <span class="card-more">Clique para expandir <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="card" onclick="expandirCard(this)">
+          <div class="card-icon">🧘</div>
+          <h3>Saúde Mental</h3>
+          <p>O equilíbrio emocional é parte fundamental da saúde integral.</p>
+          <ul>
+            <li>5 min de respiração profunda ao dia</li>
+            <li>Pratique gratidão diariamente</li>
+            <li>Mantenha conexões sociais</li>
+            <li>Busque ajuda profissional quando precisar</li>
+          </ul>
+          <span class="card-more">Clique para expandir <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculadora" class="calculadora">
+      <div class="section-header">
+        <span class="section-eyebrow">Ferramenta</span>
+        <h2>Calculadora de IMC</h2>
+        <p>O Índice de Massa Corporal relaciona peso e altura para estimar a composição corporal.</p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div class="calc-form-box">
+          <div class="calc-field">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" placeholder="Ex: João Silva" />
+          </div>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="peso">Peso (kg)</label>
+              <input type="number" id="peso" placeholder="Ex: 70" min="1" max="300" />
+            </div>
+            <div class="calc-field">
+              <label for="altura">Altura (cm)</label>
+              <input type="number" id="altura" placeholder="Ex: 175" min="50" max="250" />
+            </div>
+          </div>
+          <button id="btn-calcular" onclick="calcularIMC()">Calcular IMC</button>
+          <button id="btn-limpar" onclick="limparCalc()">Limpar campos</button>
+        </div>
+
+        <div class="calc-result-box" id="resultado-container">
+          <p class="result-label">Seu IMC</p>
+          <div id="resultado-imc" class="result-number">—</div>
+          <div id="resultado-classe" class="result-class">Preencha os campos ao lado</div>
+          <div id="resultado-nome" class="result-name"></div>
+          <div class="result-bar-wrap">
+            <div class="result-bar">
+              <div id="result-indicator" class="result-indicator"></div>
+            </div>
+            <div class="result-bar-labels">
+              <span>Abaixo</span><span>Normal</span><span>Sobre</span><span>Obeso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="tabela-titulo">Tabela de Classificação</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>IMC</th><th>Classificação</th><th>Risco</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Abaixo de 18,5</td><td>Abaixo do peso</td><td>Baixo (outros riscos)</td></tr>
+            <tr><td>18,5 – 24,9</td><td>Peso normal ✅</td><td>Mínimo</td></tr>
+            <tr><td>25,0 – 29,9</td><td>Sobrepeso ⚠️</td><td>Aumentado</td></tr>
+            <tr><td>30,0 – 34,9</td><td>Obesidade grau I</td><td>Moderado</td></tr>
+            <tr><td>35,0 – 39,9</td><td>Obesidade grau II</td><td>Severo</td></tr>
+            <tr><td>Acima de 40,0</td><td>Obesidade grau III</td><td>Muito severo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">🌿</span>
+          <span class="logo-text">Vida<strong>Saudável</strong></span>
+        </div>
+        <p>Projeto Integrador — Redes de Computadores</p>
+      </div>
+      <div class="footer-info">
+        <p><strong>Professor:</strong> Elton</p>
+        <p><strong>Entrega:</strong> 16/06/2026</p>
+        <p><strong>Disciplina:</strong> Redes de Computadores</p>
+      </div>
+      <div class="footer-clock">
+        <p class="clock-label">Horário atual</p>
+        <p id="relogio" class="clock-time">--:--:--</p>
+        <p id="data-atual" class="clock-date"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 VidaSaudável · Projeto acadêmico</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Testes de Conectividade e Serviços realizados no Packet Tracer:
+
+Teste 1: Ping do PC1 (192.168.1.10) para o Servidor (10.0.0.10).
+Resultado: Sucesso (Retornou 4 pacotes com sucesso).
+
+Teste 2: Ping do PC2 (192.168.1.11) para o Servidor (10.0.0.10).
+Resultado: Sucesso (Retornou 4 pacotes com sucesso).
+
+Teste 3: Acesso HTTP via Navegador Web (PC1) usando IP.
+Ação: Acesso a http://10.0.0.10
+Resultado: Sucesso (Página inicial do projeto VidaSaudável carregou corretamente).
+
+Teste 4: Acesso HTTP via Navegador Web (PC1) usando resolução de nome (DNS).
+Ação: Acesso a http://www.vidasaudavel.com
+Resultado: Sucesso (DNS resolveu para o IP 10.0.0.10 e a página carregou corretamente).
